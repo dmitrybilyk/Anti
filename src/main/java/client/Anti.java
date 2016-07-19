@@ -1,5 +1,6 @@
 package client;
 
+import client.panels.LoginPanel;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.*;
 
@@ -8,6 +9,6 @@ import com.google.gwt.user.client.ui.*;
  */
 public class Anti implements EntryPoint {
     public void onModuleLoad() {
-        RootPanel.get().add(new Label("some text"));
+        RootPanel.get().add(new LoginPanel());
     }
 }

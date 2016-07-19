@@ -7,6 +7,7 @@
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.7.0/" />
         <setting name="gwtSdkType" value="maven" />
+        <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
     <facet type="web" name="Web">
@@ -26,7 +27,7 @@
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>D:/dev/appengine-java-sdk-1.9.37</sdk-home-path>
+        <sdk-home-path>$MAVEN_REPOSITORY$/com/google/appengine/appengine-java-sdk/1.9.38/appengine-java-sdk/appengine-java-sdk-1.9.38</sdk-home-path>
       </configuration>
     </facet>
   </component>
@@ -43,6 +44,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="AppEngine Dev 1.9.37" level="application_server_libraries" />
     <orderEntry type="library" name="AppEngine API" level="project" />
+    <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.gwt:gwt-servlet:2.7.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-user:2.7.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />

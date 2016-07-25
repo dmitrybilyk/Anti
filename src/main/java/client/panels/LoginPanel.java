@@ -1,5 +1,10 @@
 package client.panels;
 
+import client.events.UserIsLoggedInEvent;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.ui.*;
 
 /**
@@ -7,11 +12,13 @@ import com.google.gwt.user.client.ui.*;
  */
 public class LoginPanel extends VerticalPanel{
 
+    private HandlerManager handlerManager;
     public LoginPanel() {
 //        setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 //        setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
         getElement().setAttribute("align", "center");
         getElement().setAttribute("vertical-align", "middle");
+        handlerManager = new HandlerManager(this);
         add(getLoginPanel());
     }
 
@@ -29,7 +36,16 @@ public class LoginPanel extends VerticalPanel{
 
         // Add some standard form options
         layout.setHTML(1, 0, "Имя");
-        layout.setWidget(1, 1, new TextBox());
+        TextBox nameTextBox = new TextBox();
+        nameTextBox.addKeyUpHandler(new KeyUpHandler() {
+            @Override
+            public void onKeyUp(KeyUpEvent event) {
+                if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+                    handlerManager.fireEvent(new UserIsLoggedInEvent("admin"));
+                }
+            }
+        });
+        layout.setWidget(1, 1, nameTextBox);
         layout.setHTML(2, 0, "Пароль");
         layout.setWidget(2, 1, new TextBox());
 
